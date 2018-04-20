@@ -88,7 +88,7 @@ namespace LR
                 // 看玩家有無得獎
                 if (score > 0)
                 {
-                    Console.WriteLine("這次您共中了" + score + "次獎");
+                    Console.WriteLine("這次您共中了 " + score + " 次獎！" + "\r\n");
                 }
                 else
                 {
