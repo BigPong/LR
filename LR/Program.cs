@@ -23,6 +23,7 @@ namespace LR
                 int score = 0;// 玩家中獎數
 
                 Console.WriteLine("請簽下這期大樂透號碼(1碼 1~42)" + "\r\n");
+
                 // 直到玩家輸入正確才Break  否則都到Catch
                 while (true)
                 {
@@ -30,11 +31,13 @@ namespace LR
                     {
                         // 不能轉換即到catch
                         Int32.TryParse(Console.ReadLine(), out prize);
+
                         // 非1~42即到Catch
                         if (prize >= 1 && prize <= 42)
                         {
                             // 空行美觀
                             Console.WriteLine("\r\n");
+
                             // 好東西  不知道功能上網查
                             break;
                         }
@@ -61,6 +64,7 @@ namespace LR
                     {
                         // 將開獎號碼存進num陣列
                         num[j] = r.Next(1, 43);
+
                         // 比對玩家是否得獎
                         if (num[j] == prize)
                         {
@@ -73,11 +77,14 @@ namespace LR
                             // 沒得獎字太白
                             Console.ForegroundColor = ConsoleColor.White;
                         }
+
                         // 用String組合的方式print出號碼
                         Console.WriteLine("第" + (j + 1) + "組號碼:" + num[j]);
                     }
+
                     // 換行for美觀
                     Console.WriteLine("\r\n");
+
                     // 暫停一下會比較有開獎的fu
                     Thread.Sleep(500);
                 }
